@@ -73,11 +73,26 @@ main {
 }
 
 #second-section {
-  background-color: var(--text-main);
+  /* background-color: var(--text-main); */
 }
 
 aside {
   background-color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#favorite-title {
+  color: #1a1d3a;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: solid 2px;
+  width: 90%;
 }
 
 #neon-line {
