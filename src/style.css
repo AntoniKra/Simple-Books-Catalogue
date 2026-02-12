@@ -1,0 +1,182 @@
+:root {
+  --bg-dark: #242949;
+  --bg-footer: #1a1d3a;
+  --text-main: #b599ee;
+  --neon-glow: #bc13fe;
+  --text-white: aliceblue;
+  --font-main: "Outfit", sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  margin: 0px;
+}
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 0.9rem;
+  padding: 0 30px;
+
+  text-shadow:
+    0 0 2px var(--text-main),
+    0 0 10px var(--text-main),
+    0 0 1px var(--text-main),
+    0 0 42px var(--neon-glow),
+    0 0 20px var(--neon-glow);
+
+  animation: flicker 7s infinite alternate;
+}
+
+#first-section {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#first-section p {
+  color: var(--text-white);
+}
+
+#search {
+  padding-top: 10px;
+}
+
+#search-input {
+  background-color: var(--bg-dark);
+  border: solid 0.1rem var(--text-main);
+  padding: 20px;
+  width: 40%;
+}
+
+#search-button {
+  background-color: var(--bg-dark);
+  border: solid 0.1rem var(--text-main);
+  padding: 20px 30px;
+  color: var(--text-white);
+}
+
+main {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  gap: 24px;
+  padding: 40px 0;
+  flex-grow: 1;
+}
+
+#second-section {
+  background-color: var(--text-main);
+}
+
+aside {
+  background-color: var(--text-main);
+}
+
+#neon-line {
+  height: 2px;
+  width: 100%;
+  margin: 0px;
+  margin-top: 60px;
+  border: 0;
+  background-color: var(--text-main);
+  position: relative;
+  z-index: 10;
+
+  box-shadow:
+    0 0 5px var(--text-main),
+    0 0 10px var(--neon-glow),
+    0 0 20px var(--neon-glow);
+}
+
+footer {
+  background-color: var(--bg-footer);
+  text-align: center;
+  padding: 30px 0;
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  aside {
+    border-top: 1px solid;
+    padding-top: 20px;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow:
+      0 0 2px var(--text-main),
+      0 0 13px var(--text-main),
+      0 0 1px var(--text-main),
+      0 0 42px var(--neon-glow),
+      0 0 40px var(--neon-glow);
+    color: var(--text-main);
+    opacity: 1;
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+    color: #444;
+    opacity: 0.7;
+  }
+}
+
+/* <div id="app-container">
+      <header class="app-header">
+        <h1>Simple Books Catalogue</h1>
+        <p>Discover your next great read</p>
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+          🌙
+        </button>
+      </header>
+
+      <section class="search-section">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for books by title, author..."
+            autocomplete="off"
+          />
+          <button id="search-btn">Find Book</button>
+        </div>
+        <div id="status-message" class="hidden"></div>
+      </section>
+
+      <main class="main-content">
+        <section class="results-column">
+          <h2>Search Results</h2>
+          <div id="books-grid" class="books-grid">
+            <p class="placeholder-text">Enter a title to start searching...</p>
+          </div>
+        </section>
+
+        <aside class="favorites-column">
+          <h2>Favorites ❤️</h2>
+          <div id="favorites-list" class="favorites-list">
+            <p class="empty-favorites">No favorites yet.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.js"></script> */

@@ -4,8 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Books Catalogue</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <div id="app-container">
+      <header>
+        <div>
+          <h1>Neon Library</h1>
+        </div>
+      </header>
+
+      <section id="first-section">
+        <h1>Dsicover your next great Read</h1>
+        <p>coś tu wpiszemy pozniej</p>
+        <form id="search">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search for book by title or author"
+          />
+          <button type="submit" id="search-button">Search</button>
+        </form>
+      </section>
+
+      <main>
+        <section id="second-section">
+          <div>
+            <p>Enter a title to start searching</p>
+          </div>
+        </section>
+        <aside>
+          <div></div>
+          <div>
+            <p>No favorites book yet</p>
+          </div>
+        </aside>
+      </main>
+
+      <hr id="neon-line" />
+
+      <footer>
+        <p>Designed by Antoni</p>
+      </footer>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
