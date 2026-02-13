@@ -52,6 +52,14 @@ header {
   border: solid 0.1rem var(--text-main);
   padding: 20px;
   width: 40%;
+  color: var(--text-white);
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+#search-input:hover {
+  background-color: var(--text-main);
+  box-shadow: 0 0 15px var(--neon-glow);
 }
 
 #search-button {
@@ -59,6 +67,15 @@ header {
   border: solid 0.1rem var(--text-main);
   padding: 20px 30px;
   color: var(--text-white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#search-button:hover {
+  background-color: var(--text-main);
+  color: var(--bg-dark);
+  box-shadow: 0 0 15px var(--neon-glow);
 }
 
 main {
@@ -73,7 +90,29 @@ main {
 }
 
 #second-section {
-  /* background-color: var(--text-main); */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 100%;
+  gap: 30px;
+}
+
+.book-card {
+}
+
+.book-card h3 {
+  font-size: 1rem;
+}
+
+.book-card p {
+  font-size: 0.8rem;
+}
+
+.info-text {
+  text-align: center;
+  color: var(--text-white);
+  font-size: 1.2rem;
+
+  grid-column: 1 / -1;
 }
 
 aside {
