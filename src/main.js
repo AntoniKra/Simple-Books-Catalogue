@@ -25,7 +25,7 @@ searchForm.addEventListener("submit", async (event) => {
     console.log(data);
 
     if (data.numFound === 0) {
-      booksContainer.innerHTML = '<p id="info-text"> 1 </p>';
+      booksContainer.innerHTML = '<p class="info-text"> No books found 😞 </p>';
       return;
     }
 
