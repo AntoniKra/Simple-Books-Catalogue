@@ -15,7 +15,7 @@
   <body>
     <div id="app-container">
       <header>
-        <div>
+        <div class="header-content">
           <h1>Neon Library</h1>
         </div>
       </header>
@@ -35,21 +35,18 @@
       </section>
 
       <main>
-        <section id="second-section"></section>
-        <aside>
-          <div id="favorite-title">
-            <p>Favorites</p>
-            <img
-              width="24"
-              height="24"
-              src="https://img.icons8.com/liquid-glass-color/32/pixel-heart.png"
-              alt="pixel-heart"
-            />
-          </div>
-          <div>
-            <p>No favorites book yet</p>
-          </div>
-        </aside>
+        <nav class="tabs-container">
+          <button id="tab-books" class="tab-button active">Books</button>
+          <button id="tab-favorites" class="tab-button">Favorites ❤️</button>
+        </nav>
+        <div class="glass-window">
+          <section id="second-section" class="tab-content active"></section>
+          <section id="favorite-section" class="tab-content">
+            <div class="empty-state">
+              <p>No favorites book yet 😞</p>
+            </div>
+          </section>
+        </div>
       </main>
 
       <hr id="neon-line" />
@@ -62,3 +59,18 @@
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
+
+<!-- <aside>
+          <div id="favorite-title">
+            <p>Favorites</p>
+            <img
+              width="24"
+              height="24"
+              src="https://img.icons8.com/liquid-glass-color/32/pixel-heart.png"
+              alt="pixel-heart"
+            />
+          </div>
+          <div>
+            <p>No favorites book yet</p>
+          </div>
+        </aside> -->

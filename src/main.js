@@ -45,9 +45,11 @@ searchForm.addEventListener("submit", async (event) => {
       const html = `
         <article class="book-card">
           <img src="${coverImage}" alt="${book.title}" />
-          <h3>${book.title}</h3>
-          <p>${author}</p>
-          <p>${year}</p>
+          <div class="book-info">
+            <h3>${book.title}</h3>
+            <p>${author}</p>
+            <p>${year}</p>
+          </div>
         </article>
       `;
 
