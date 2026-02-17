@@ -78,10 +78,10 @@ header {
 }
 
 #search-button {
-  background-color: var(--bg-footer);
+  background-color: var(--text-main);
   border: solid 0.1rem var(--text-main);
   padding: 20px 30px;
-  color: var(--text-neon);
+  color: var(--bg-footer);
   font-size: medium;
   font-weight: 600;
   cursor: pointer;
@@ -91,9 +91,7 @@ header {
 }
 
 #search-button:hover {
-  background-color: var(--text-main);
   box-shadow: 0 0 15px var(--neon-glow);
-  color: var(--bg-footer);
 }
 
 main {
@@ -118,7 +116,7 @@ main {
   background-color: transparent;
   border: 1px solid transparent;
   color: #aeb2d6;
-  padding: 20px 48px;
+  padding: 20px 60px;
   font-size: 1.3rem;
   cursor: pointer;
   border-radius: 24px 24px 0 0;
@@ -130,7 +128,7 @@ main {
 }
 
 .tab-button.active {
-  background: rgba(30, 34, 60, 0.2);
+  background: rgba(17, 19, 34, 0.3);
   font-size: 1.5rem;
   backdrop-filter: blur(20px);
   color: var(--text-neon);
@@ -151,7 +149,7 @@ main {
   background-color: rgba(17, 19, 34, 0.4);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 0 32px 32px 32px;
+  border-radius: 12px 32px 32px 32px;
   padding: 50px;
   min-height: 60vh;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
@@ -161,18 +159,14 @@ main {
   display: none;
 }
 
-#book-section.active {
+#book-section.active,
+#favorite-section.active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 230px));
   gap: 40px;
   width: 100%;
 
   justify-content: center;
-  animation: fadeIn 0.4s ease-out;
-}
-
-#favorite-section.active {
-  display: block;
   animation: fadeIn 0.4s ease-out;
 }
 
@@ -215,6 +209,45 @@ main {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
+.book-header {
+  width: 100%;
+  position: relative;
+}
+
+.btn-heart {
+  position: absolute;
+  z-index: 5;
+  top: 10px;
+  right: 10px;
+
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(4px);
+  background-color: rgba(30, 34, 60, 0.8);
+  border-radius: 50%;
+  border: solid 1px var(--text-white);
+
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-heart:hover {
+  transform: scale(1.15) rotate(10deg);
+  background: var(--text-main);
+  box-shadow: 0 0 15px var(--neon-glow);
+  border-color: transparent;
+}
+
+.btn-heart:active {
+  transform: scale(0.9);
+}
+
 .book-info {
   padding: 0px 15px;
 }
@@ -238,6 +271,7 @@ main {
   text-align: center;
   color: var(--text-white);
   font-size: 1.4rem;
+  margin-top: 100px;
   grid-column: 1 / -1;
 }
 
@@ -257,7 +291,7 @@ main {
   height: 2px;
   width: 100%;
   margin: 0px;
-  margin-top: 60px;
+  margin-top: 80px;
   border: 0;
   background-color: var(--text-main);
   position: relative;
@@ -275,6 +309,25 @@ footer {
   text-align: center;
   padding: 20px 0;
   font-weight: 700;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(181, 153, 238, 0.1);
+  border-top: 5px solid var(--text-main);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 15px var(--neon-glow);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 900px) {
