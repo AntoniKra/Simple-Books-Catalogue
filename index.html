@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Books Catalogue</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/index-DqAVr7xm.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BRBiGawv.css">
+  </head>
+  <body>
+    <div id="app-container">
+      <header>
+        <div class="header-content">
+          <h1>Neon Library</h1>
+        </div>
+      </header>
+
+      <section id="first-section">
+        <h1>Discover Your Next Great Read</h1>
+        <p>Reading is a bridge to a future full of hope</p>
+        <form id="search">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Search for book by title or author"
+            autocomplete="off"
+          />
+          <button type="submit" id="search-button">Search</button>
+        </form>
+      </section>
+
+      <main>
+        <nav class="tabs-container">
+          <button id="tab-books" class="tab-button active">Books</button>
+          <button id="tab-favorites" class="tab-button">Favorites 🩶</button>
+        </nav>
+        <div class="glass-window">
+          <section id="book-section" class="tab-content active"></section>
+          <section id="favorite-section" class="tab-content">
+            <div class="empty-state">
+              <p>No favorites book yet 😞</p>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <hr id="neon-line" />
+
+      <footer>
+        <p>Designed by Antoni</p>
+      </footer>
+    </div>
+
+  </body>
+</html>
