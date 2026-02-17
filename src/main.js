@@ -3,6 +3,9 @@ console.log("Czysty start!");
 const searchForm = document.querySelector("#search");
 const searchInput = document.querySelector("#search-input");
 const booksContainer = document.querySelector("#book-section");
+const favoriteContainer = document.querySelector("#favorite-section");
+const bookTab = document.querySelector("#tab-books");
+const favTab = document.querySelector("#tab-favorites");
 
 searchForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -15,6 +18,8 @@ searchForm.addEventListener("submit", async (event) => {
     alert("Input book name!");
     return;
   }
+
+  switchTab("books");
 
   try {
     const response = await fetch(
@@ -60,4 +65,28 @@ searchForm.addEventListener("submit", async (event) => {
   } catch (error) {
     console.error("Something goes wrong:", error);
   }
+});
+
+function switchTab(mode) {
+  if (mode === "books") {
+    bookTab.classList.add("active");
+    favTab.classList.remove("active");
+
+    booksContainer.classList.add("active");
+    favoriteContainer.classList.remove("active");
+  } else {
+    bookTab.classList.remove("active");
+    favTab.classList.add("active");
+
+    booksContainer.classList.remove("active");
+    favoriteContainer.classList.add("active");
+  }
+}
+
+bookTab.addEventListener("click", () => {
+  switchTab("books");
+});
+
+favTab.addEventListener("click", () => {
+  switchTab("favorites");
 });
