@@ -3,6 +3,7 @@
   --bg-footer: #1a1d3a;
   --text-main: #b599ee;
   --neon-glow: #bc13fe;
+  --text-neon: rgb(238, 215, 238);
   --text-white: aliceblue;
   --font-main: "Outfit", sans-serif;
 }
@@ -29,10 +30,10 @@ header {
 
 .header-content {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1500px;
   padding: 0 20px;
   font-size: 0.9rem;
-  color: rgb(238, 215, 238);
+  color: var(--text-neon);
   text-shadow:
     0 0 2px var(--text-main),
     0 0 10px var(--text-main),
@@ -45,7 +46,7 @@ header {
 
 #first-section {
   text-align: center;
-  padding-top: 10px;
+  margin-top: 30px;
   margin-bottom: 60px;
 }
 
@@ -80,7 +81,7 @@ header {
   background-color: var(--bg-dark);
   border: solid 0.1rem var(--text-main);
   padding: 20px 30px;
-  color: rgb(238, 215, 238);
+  color: var(--text-neon);
   font-size: medium;
   font-weight: 600;
   cursor: pointer;
@@ -97,9 +98,11 @@ header {
 
 main {
   width: 100%;
-  max-width: 1400px;
-  padding: 40px 0;
+  max-width: 1560px;
+  padding: 40px 30px;
   flex-grow: 1;
+
+  box-sizing: border-box;
 }
 
 .tabs-container {
@@ -129,7 +132,7 @@ main {
 .tab-button.active {
   background: rgba(30, 34, 60, 0.2);
   backdrop-filter: blur(20px);
-  color: rgb(238, 215, 238);
+  color: var(--text-neon);
   text-shadow:
     0 0 2px var(--text-main),
     0 0 10px var(--text-main),
@@ -155,11 +158,13 @@ main {
   display: none;
 }
 
-#second-section.active {
+#book-section.active {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 230px));
   gap: 40px;
   width: 100%;
+
+  justify-content: center;
 }
 
 #favorite-section.active {
@@ -179,7 +184,7 @@ main {
 }
 
 .book-card {
-  width: 210px;
+  width: 100%;
   background-color: rgba(30, 34, 60, 0.6);
   backdrop-filter: blur(10px);
   border: rgba(181, 153, 238, 0.3) solid 1px;
@@ -199,7 +204,7 @@ main {
 }
 
 .book-card img {
-  height: 300px;
+  height: 320px;
   width: 100%;
   border-radius: 16px 16px 0 0;
   object-fit: fill;
@@ -207,7 +212,7 @@ main {
 }
 
 .book-info {
-  padding: 5px 15px;
+  padding: 0px 15px;
 }
 
 .book-card h3 {
@@ -261,13 +266,10 @@ main {
 }
 
 footer {
-  background-color: var(--bg-footer);
+  background-color: var(--bg--footer);
   text-align: center;
-  padding: 24px 0;
+  padding: 20px 0;
   font-weight: 700;
-}
-footer p {
-  margin: 0;
 }
 
 @media (max-width: 900px) {
@@ -295,7 +297,7 @@ footer p {
       0 0 1px var(--text-main),
       0 0 42px var(--neon-glow),
       0 0 40px var(--neon-glow);
-    color: var(--text-main);
+    color: var(--text-neon);
     opacity: 1;
   }
 
@@ -307,44 +309,3 @@ footer p {
     opacity: 0.7;
   }
 }
-
-/* <div id="app-container">
-      <header class="app-header">
-        <h1>Simple Books Catalogue</h1>
-        <p>Discover your next great read</p>
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
-          🌙
-        </button>
-      </header>
-
-      <section class="search-section">
-        <div class="search-wrapper">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Search for books by title, author..."
-            autocomplete="off"
-          />
-          <button id="search-btn">Find Book</button>
-        </div>
-        <div id="status-message" class="hidden"></div>
-      </section>
-
-      <main class="main-content">
-        <section class="results-column">
-          <h2>Search Results</h2>
-          <div id="books-grid" class="books-grid">
-            <p class="placeholder-text">Enter a title to start searching...</p>
-          </div>
-        </section>
-
-        <aside class="favorites-column">
-          <h2>Favorites ❤️</h2>
-          <div id="favorites-list" class="favorites-list">
-            <p class="empty-favorites">No favorites yet.</p>
-          </div>
-        </aside>
-      </main>
-    </div>
-
-    <script type="module" src="/src/main.js"></script> */

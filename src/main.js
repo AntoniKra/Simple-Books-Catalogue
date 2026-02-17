@@ -2,7 +2,7 @@ console.log("Czysty start!");
 
 const searchForm = document.querySelector("#search");
 const searchInput = document.querySelector("#search-input");
-const booksContainer = document.querySelector("#second-section");
+const booksContainer = document.querySelector("#book-section");
 
 searchForm.addEventListener("submit", async (event) => {
   event.preventDefault();
