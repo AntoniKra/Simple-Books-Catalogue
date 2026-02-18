@@ -9,6 +9,7 @@ const booksContainer = document.querySelector("#book-section");
 const favoriteContainer = document.querySelector("#favorite-section");
 const bookTab = document.querySelector("#tab-books");
 const favTab = document.querySelector("#tab-favorites");
+const glassWindow = document.querySelector(".glass-window");
 
 // --- STATE ---
 let currentBooks = [];
@@ -68,6 +69,10 @@ function switchTab(mode) {
   favTab.classList.toggle("active", !isBooks);
   booksContainer.classList.toggle("active", isBooks);
   favoriteContainer.classList.toggle("active", !isBooks);
+  if (glassWindow) {
+    glassWindow.classList.toggle("mode-books", isBooks);
+    glassWindow.classList.toggle("mode-favorites", !isBooks);
+  }
   if (!isBooks) renderFavorites();
 }
 
@@ -130,4 +135,4 @@ bookTab.addEventListener("click", () => switchTab("books"));
 favTab.addEventListener("click", () => switchTab("favorites"));
 
 // INITIAL LOAD
-fetchBooks("javascript");
+fetchBooks("antoni");

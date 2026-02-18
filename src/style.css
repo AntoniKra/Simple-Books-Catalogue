@@ -31,7 +31,7 @@ header {
 .header-content {
   width: 100%;
   max-width: 1500px;
-  padding: 0 20px;
+  padding: 0 30px;
   font-size: 0.9rem;
   color: var(--text-neon);
   text-shadow:
@@ -55,7 +55,7 @@ header {
 }
 
 #search {
-  padding-top: 10px;
+  padding-top: 20px;
   display: flex;
   justify-content: center;
 }
@@ -64,7 +64,7 @@ header {
   background-color: var(--bg-footer);
   border: solid 0.1rem var(--text-main);
   padding: 20px;
-  width: 40vw;
+  width: 45vw;
   color: var(--text-white);
   transition: all 0.3s ease-in-out;
   outline: none;
@@ -106,20 +106,24 @@ main {
 .tabs-container {
   display: flex;
   gap: 10px;
-  padding-left: 32px;
+  padding-left: clamp(10px, 5vw, 32px);
   margin-bottom: -1px;
   position: relative;
   z-index: 10;
 }
 
 .tab-button {
+  flex: 1;
   background-color: transparent;
   border: 1px solid transparent;
   color: #aeb2d6;
-  padding: 20px 60px;
-  font-size: 1.3rem;
+  padding: 15px 20px;
+  max-width: 250px;
+  font-size: clamp(0.9rem, 3vw, 1.3rem);
   cursor: pointer;
   border-radius: 24px 24px 0 0;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .tab-button:hover {
@@ -129,7 +133,7 @@ main {
 
 .tab-button.active {
   background: rgba(17, 19, 34, 0.3);
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
   backdrop-filter: blur(20px);
   color: var(--text-neon);
   text-shadow:
@@ -142,6 +146,7 @@ main {
   border-bottom-color: rgba(30, 34, 60, 0.09);
   box-shadow: 0 -10px 20px rgba(188, 19, 254, 0.1);
 
+  padding: 20px 15px 0px 15px;
   transition: all 0.2s linear;
 }
 
@@ -153,6 +158,29 @@ main {
   padding: 50px;
   min-height: 60vh;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 700px) {
+  .glass-window.mode-books {
+    border-radius: 0 32px 32px 32px;
+  }
+
+  .glass-window.mode-favorites {
+    border-radius: 32px 0 32px 32px;
+  }
+
+  #search-button {
+    background-color: var(--bg-footer);
+    border: solid 0.1rem var(--text-main);
+    padding: 20px 30px 20px 30px;
+    color: var(--text-white);
+    font-size: medium;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0 24px 24px 0;
+    border-left: none;
+  }
 }
 
 .tab-content {
